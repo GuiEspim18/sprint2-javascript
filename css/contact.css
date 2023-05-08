@@ -1,0 +1,29 @@
+.contact-content {
+    width: 100%;
+    min-height: 500px;
+    background-image: url("../img/background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding: 50px 0px;
+}
+
+.contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-card {
+    width: 450px;
+}
+
+.contact-card h1 {
+    text-align: center;
+}
+
+.contact-card .button-card-div {
+    display: flex;
+    justify-content: end;
+}

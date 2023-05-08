@@ -1,0 +1,125 @@
+.about-content {
+    width: 100%;
+    min-height: 500px;
+    background-image: url("../img/background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.about-text {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+}
+
+.about-img {
+    width: 300px;
+}
+
+.diferential {
+    padding-bottom: 30px;
+}
+
+.diferential h1 {
+    color: #07292B;
+    text-align: center;
+}
+
+.about-text {
+    color: #D9D9D9;
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+
+.about-text>.title {
+    width: 100%;
+    padding: 10px 0px;
+}
+
+.about-text>.title>h1 {
+    color: #D9D9D9;
+    width: 100%;
+    text-align: center;
+}
+
+.about-text-div {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.about-img-div {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-table {
+    width: 100%;
+    border-spacing: 0px
+}
+
+.about-table-head {
+    background-color: #0E4B4F;
+    color: #D9D9D9;
+    height: 40px;
+    border-collapse: collapse;
+}
+
+.about-table-head th {
+    width: 50%;
+}
+
+.about-table-body tr {
+    background-color: #B7B7B7;
+}
+
+.about-table-body tr td {
+    padding: 30px;
+    text-align: start;
+    width: 50%;
+}
+
+.about-table-body tr:nth-child(odd) {
+    background-color: #D9D9D9;
+    color: #07292B;
+}
+
+.context > .container h1 {
+    width: 100%;
+    text-align: center;
+}
+
+.context > .container > .title {
+    margin: 60px 0px;
+}
+
+.context > .container .card  p {
+    text-align: start;
+}
+
+.context {
+    background: linear-gradient(360deg, #07292B 35.1%, #0E4B4F 63.92%, rgba(7, 41, 43, 0) 94.13%);
+    height: 1000px;
+}
+
+.card-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 70px;
+    padding: 0px 150px;
+}
+
+.card-and-image {
+    display: flex;
+    align-items: center;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+} 
