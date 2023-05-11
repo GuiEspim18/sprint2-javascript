@@ -1,3 +1,7 @@
+/** 
+ * Importing all html elements
+ */
+
 const submit = document.querySelector("#submit");
 const nameInput = document.querySelector("#name");
 const emailInput = document.querySelector("#email");
@@ -7,6 +11,11 @@ const date = document.querySelector("#date");
 
 const passwordInput = document.querySelectorAll(".password-input");
 const calendar = document.querySelector("#calendar");
+
+
+/** 
+ * declaring form
+ */
 
 let pw1 = false;
 let pw2 = false;
@@ -28,22 +37,32 @@ let form = {
 };
 
 
+/** 
+ * Main functions and script
+ */
+
+
+// getting all input fields and setting event
 fields.forEach(element => getEvent(element));
 
 
+// getting passwords input and setting event
 passwordInput.forEach(element => passwordEvent(element));
 
 
+// getting submit button and setting event
 submit.addEventListener("click", () => {
     validade(form);
 });
 
 
+// getting callendar icon and setting event
 calendar.addEventListener("click", () => {
     date.showPicker();
 });
 
 
+// function to set event on password eye to change visibility
 function passwordEvent(value) {
     let id = value.childNodes[3].id
     let icon = value.childNodes[3];
@@ -59,6 +78,7 @@ function passwordEvent(value) {
 }
 
 
+// function to change the password visibility
 function changeVisibility(value, visibility, icon) {
     if (visibility === false) {
         value.type = "text";
@@ -72,6 +92,7 @@ function changeVisibility(value, visibility, icon) {
 }
 
 
+// setting input event
 function getEvent(value) {
     if (value.field === "date") {
         value.input.addEventListener("change", (event) => {
@@ -84,6 +105,7 @@ function getEvent(value) {
 }
 
 
+// validating form
 function validade(value) {
     for (let item in value) {
         if (value[item].length == 0) {
