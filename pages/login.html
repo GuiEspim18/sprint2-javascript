@@ -7,6 +7,7 @@
     <title>PathFinder - Login</title>
     <!-- Link css files -->
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/login.js" defer></script>
 </head>
 <body>
     <div class="page-content">
@@ -18,7 +19,7 @@
             <div class="card card-form">
                 <h1>Login</h1>
                 <form>
-                    <input type="email" class="text-input" placeholder="Email">
+                    <input type="email" class="text-input" placeholder="Email" id="email">
                     <div class="password-input">
                         <input type="password" placeholder="Senha" name="password" id="password">
                         <i>
@@ -26,10 +27,8 @@
                         </i>
                     </div>
                     <div class="button-card-div">
-                        <button class="blue-button noselect">
-                            <a href="../index.html">
-                                <p>Entrar</p>
-                            </a>
+                        <button class="blue-button noselect" type="button" id="submit">
+                            <p>Entrar</p>
                         </button>
                     </div>
                     <div>
