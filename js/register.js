@@ -116,7 +116,7 @@ function validade(value) {
                 alert("A senhas precisam ser iguais");
                 return false;
             } else {
-                localStorage.setItem("user", form);
+                localStorage.setItem("user", JSON.stringify(form));
                 window.location.href = "../index.html";
             }
         }
