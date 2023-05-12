@@ -7,6 +7,7 @@
     <title>PathFinder - Cadastro</title>
     <!-- Link css files -->
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/register.js" defer></script>
 </head>
 <body>
     <div class="page-content">
@@ -18,31 +19,29 @@
             <div class="card card-form">
                 <h1>Cadastro</h1>
                 <form>
-                    <input type="text" class="text-input" placeholder="Nome">
-                    <input type="email" class="text-input" placeholder="Email">
+                    <input type="text" class="text-input" placeholder="Nome" id="name">
+                    <input type="email" class="text-input" placeholder="Email" id="email">
                     <div class="password-input">
                         <input type="password" placeholder="Senha" name="password" id="password">
-                        <i>
+                        <i id="password">
                             <img src="../img/eye.svg" alt="">
                         </i>
                     </div>
                     <div class="password-input">
-                        <input type="password" placeholder="Repita a senha" name="password" id="password">
-                        <i>
+                        <input type="password" placeholder="Repita a senha" name="password" id="passwordReview">
+                        <i id="passwordReview">
                             <img src="../img/eye.svg" alt="">
                         </i>
                     </div>
                     <div class="date-input">
-                        <input type="text" placeholder="Data de nascimento" name="date" id="date">
-                        <i>
+                        <input type="date" placeholder="Data de nascimento" name="date" id="date">
+                        <i id="calendar">
                             <img src="../img/calendar.svg" alt="">
                         </i>
                     </div>
                     <div class="button-card-div">
-                        <button class="blue-button noselect">
-                            <a href="../index.html">
-                                <p>Cadastrar</p>
-                            </a>
+                        <button class="blue-button noselect" type="button" id="submit">
+                            <p>Cadastrar</p>
                         </button>
                     </div>
                     <div>

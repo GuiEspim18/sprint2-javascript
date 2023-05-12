@@ -9,7 +9,7 @@
     background: #F0F0F0;
     font-size: 1rem;
     margin-bottom: 1rem;
-    
+    color: #07292B;
 }
 
 .text-area {
@@ -59,7 +59,9 @@ input::placeholder {
     background: transparent;
     border: none;
     font-size: 1rem;
+    color: #07292B;
 }
+
 .password-input input::placeholder {
     color: #979797;
 }
@@ -90,7 +92,9 @@ input::placeholder {
     background: transparent;
     border: none;
     font-size: 1rem;
+    color: #07292B;
 }
+
 .date-input input::placeholder {
     color: #979797;
 }
@@ -99,4 +103,32 @@ input::placeholder {
     margin: 0 auto;
     cursor: pointer;
     height: 16px;
+}
+
+#date {
+    color: #07292B;
+    position: relative;
+}
+
+/* make the native arrow invisible and stretch it over the whole field so you can click anywhere in the input field to trigger the native datepicker*/
+#date::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    color: transparent;
+    background: transparent;
+}
+
+/* adjust increase/decrease button */
+#date::-webkit-inner-spin-button {
+    z-index: 1;
+}
+
+/* adjust clear button */
+#date::-webkit-clear-button {
+    z-index: 1;
 }
