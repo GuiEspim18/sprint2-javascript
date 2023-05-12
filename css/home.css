@@ -6,6 +6,11 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    transition: opacity 1s ease-in-out;
+}
+
+#banner.fade-in {
+    opacity: 1;
 }
 
 .banner-content {
@@ -15,7 +20,7 @@
     height: 100%;
 }
 
-.logo-banner > img {
+.logo-banner>img {
     width: 250px;
 }
 
@@ -23,21 +28,21 @@
     padding: 20px 0px;
 }
 
-.about > .container > .title {
+.about>.container>.title {
     width: 100%;
 }
 
-.about > .container > .text {
+.about>.container>.text {
     width: 100%;
 }
 
-.about > .container > .title > h1 {
+.about>.container>.title>h1 {
     width: 100%;
     text-align: center;
     color: #07292B;
 }
 
-.about > .container > .text > p {
+.about>.container>.text>p {
     width: 100%;
     color: #07292B;
     font-size: 1.2rem;
@@ -60,12 +65,12 @@
     height: 40% !important;
 }
 
-.services > .title {
+.services>.title {
     width: 100%;
     padding: 10px 0px;
 }
 
-.services > .title > h1 {
+.services>.title>h1 {
     width: 100%;
     text-align: center;
     color: #D9D9D9;
@@ -78,7 +83,7 @@
     position: relative;
 }
 
-.download > .img-div > img {
+.download>.img-div>img {
     width: 450px;
 }
 
@@ -92,7 +97,7 @@
     width: 100%;
 }
 
-.download-card-div > .large-card {
+.download-card-div>.large-card {
     height: 250px;
     display: flex;
     flex-direction: column;
@@ -100,10 +105,10 @@
     padding: 35px 50px;
 }
 
-.download-card-div > .large-card > h1 {
+.download-card-div>.large-card>h1 {
     text-align: center;
 }
 
-.download-card-div > .large-card > p {
+.download-card-div>.large-card>p {
     text-align: start;
 }
