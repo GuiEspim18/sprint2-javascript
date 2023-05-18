@@ -1,0 +1,32 @@
+.alert-div {
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    z-index: 9999;
+}
+
+.alert {
+    width: 350px;
+    height: 35px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    transform: scale(0);
+}
+
+.success {
+    background: #04a404;
+}
+
+.error {
+    background: #be0000;
+}
+
+.error p, .success p {
+    color: #f0f0f0;
+    text-align: center;
+}

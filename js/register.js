@@ -11,6 +11,7 @@ const date = document.querySelector("#date");
 
 const passwordInput = document.querySelectorAll(".password-input");
 const calendar = document.querySelector("#calendar");
+const alertHtml = document.querySelector("#alert");
 
 
 /** 
@@ -94,6 +95,7 @@ function changeVisibility(value, visibility, icon) {
 
 // setting input event
 function getEvent(value) {
+    addFocus(value.input);
     if (value.field === "date") {
         value.input.addEventListener("change", (event) => {
             form[value.field] = event.target.value;
@@ -107,18 +109,125 @@ function getEvent(value) {
 
 // validating form
 function validade(value) {
+    let valid = [];
+    console.log(value)
     for (let item in value) {
         if (value[item].length == 0) {
-            alert("Preencha todos os campos primeiramente");
-            return false;
+            error(false, fields.filter(element => element.input.id === item)[0].input);
+            valid.push(false);
         } else {
-            if (value['password'] !== value['passwordReview']) {
-                alert("A senhas precisam ser iguais");
-                return false;
+            if (value['password'].length === 0 && value['passwordReview'].length === 0 || value['password'] !== value['passwordReview']) {
+                if (item === "password" || item === "passwordReview") {
+                    error(false, fields.filter(element => element.input.id === item)[0].input);
+                    valid.push(false);
+                } else {
+                    valid.push(true);
+                }
             } else {
                 localStorage.setItem("user", JSON.stringify(form));
+                fields.forEach(element => {
+                    element.input.value = "";
+                })
                 window.location.href = "../index.html";
             }
         }
+    }
+    if(valid.includes(false)) {
+        showAlertError("Campos inválidos!");
+    }
+}
+
+
+function validadeEmail(value) {
+    if (value.length === 0 && !value.includes("@")) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function validadeInput(value) {
+    if (value < 1) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+// função que faz com que o campo fique com a borda vermelha
+function error(cond, item) {
+    if (!cond) {
+        if (item.id === "password" || item.id === "passwordReview" || item.id === "date") {
+            const element = item.parentNode;
+            element.classList.add("input-error");
+        } else {
+            item.classList.add("input-error");
+        }
+    } else {
+        if (item.id === "password" || item.id === "passwordReview" || item.id === "date") {
+            const element = item.parentNode;
+            element.classList.remove("input-error");
+        } else {
+            item.classList.remove("input-error");
+        }
+    }
+}
+
+function addFocus(item) {
+    item.addEventListener("keyup", (event) => appendError(event));
+    item.addEventListener("focus", () => {
+        if (item.id === "password" || item.id === "passwordReview" || item.id === "date") {
+            const element = item.parentNode;
+            element.classList.add("input-focus");
+        } else {
+            item.classList.add("input-focus");
+        }
+    })
+    item.addEventListener("blur", () => {
+        if (item.id === "password" || item.id === "passwordReview" || item.id === "date") {
+            const element = item.parentNode;
+            element.classList.remove("input-focus");
+        } else {
+            item.classList.remove("input-focus");
+        }
+    })
+}
+
+function appendError(event) {
+    const input = event.target;
+    const inputLength = input.value;
+    let validate = false;
+    let email = true;
+    let cond;
+    if (input.id === "email") {
+        validate = validadeInput(inputLength);
+        email = validadeEmail(input.value);
+    } else {
+        validate = validadeInput(inputLength);
+    }
+    cond = validate && email;
+    error(cond, input);
+}
+
+// função de fazer o alerta aparecer na tela
+function showAlertError(text) {
+    const p = alertHtml.querySelector("p");
+    p.innerText = text;
+    if (alertHtml.classList.contains("success")) alertHtml.classList.remove("success");
+    if (!alertHtml.classList.contains("error")) alertHtml.classList.add("error");
+    if (alertHtml.style.transform === "scale(0)" || alertHtml.style.transform === "") {
+        alertHtml.style.transform = "scale(1)";
+        setTimeout(() => alertHtml.style.transform = "scale(0)", 3000);
+    }
+}
+
+function showAlertSuccess(text) {
+    const p = alertHtml.querySelector("p");
+    p.innerText = text;
+    if (alertHtml.classList.contains("error")) alertHtml.classList.remove("error");
+    if (!alertHtml.classList.contains("success")) alertHtml.classList.add("success");
+    if (alertHtml.style.transform === "scale(0)" || alertHtml.style.transform === "") {
+        alertHtml.style.transform = "scale(1)";
+        setTimeout(() => alertHtml.style.transform = "scale(0)", 3000);
     }
 }

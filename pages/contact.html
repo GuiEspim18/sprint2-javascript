@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,9 @@
     <title>PathFinder - Contato</title>
     <!-- Link css files -->
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/contact.js" defer></script>
 </head>
+
 <body>
 
     <!-- Header -->
@@ -56,27 +59,32 @@
             </div>
         </section>
     </header>
-    
+
     <!-- Main content -->
     <main>
+        <div class="alert-div">
+            <div class="alert" id="alert">
+                <p></p>
+            </div>
+        </div>
         <section class="contact-content">
             <div class="container contact-container">
                 <div class="card contact-card">
                     <h1>Preencha o formulário</h1>
-                    <input type="text" class="text-input" placeholder="Nome">
-                    <input type="email" class="text-input" placeholder="Email">
-                    <input type="text" class="text-input" placeholder="Assunto">
-                    <div>
-                        <label class="input-label" for="id">Mensagem:</label>
-                        <textarea name="message" id="message" cols="30" rows="10" class="text-area"></textarea>
-                    </div>
-                    <div class="button-card-div">
-                        <button class="blue-button noselect">
-                            <a href="./pages/register.html">
-                                <p>Comece agora</p>
-                            </a>
-                        </button>
-                    </div>
+                    <form action="post" id="form" novalidate>
+                        <input type="text" class="text-input" placeholder="Nome" id="name">
+                        <input type="email" class="text-input" placeholder="Email" id="email">
+                        <input type="text" class="text-input" placeholder="Assunto" id="text">
+                        <div>
+                            <label class="input-label" for="id">Mensagem:</label>
+                            <textarea name="message" id="message" cols="30" rows="10" class="text-area" id="message"></textarea>
+                        </div>
+                        <div class="button-card-div">
+                            <button class="blue-button noselect">
+                                <p>Enviar</p>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
@@ -147,4 +155,5 @@
         </section>
     </footer>
 </body>
+
 </html>
